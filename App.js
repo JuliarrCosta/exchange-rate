@@ -39,8 +39,8 @@ do{
             break;
         
         }else{
-            console.log(`${origem} ${valor} => ${destino} ${result} `)
-            console.log(`Taxa: ${rate}`)
+            console.log(`${origem} ${valor} => ${destino} ${Controller.formatValor(result)} `)
+            console.log(`Taxa: ${Controller.formatCasasDecimais(rate)}`)
         }
     }else{
         console.log(error)
