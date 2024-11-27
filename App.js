@@ -28,7 +28,7 @@ do{
         error.push("Insira um valor maior que zero!")
     }
     
-    if(!Controller.validatorOrigemDestino(origem, destino) && !Controller.validatorMoeda(origem) && !Controller.validatorMoeda(destino) && Controller.validatorValor(valor)){
+    if(!Controller.validatorOrigemDestino(origem, destino) && Controller.validatorMoeda(origem) && Controller.validatorMoeda(destino) && Controller.validatorValor(valor)){
 
         const conversion = new Conversion(origem ,destino, parseFloat(valor))
         const rate = await conversion.convert_rate()
