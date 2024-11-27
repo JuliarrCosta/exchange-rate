@@ -21,14 +21,14 @@ do{
     if(Controller.validatorOrigemDestino(origem, destino)){
         error.push("As duas moedas são iguais! Elas devem ser diferentes.")
     }
-    if(!Controller.validatorMoeda(origem) || Controller.validatorMoeda(destino)){
+    if(!Controller.validatorMoeda(origem) || !Controller.validatorMoeda(destino)){
         error.push("As moedas devem ser escritas com apenas três letras")
     }
     if(!Controller.validatorValor(valor)){
         error.push("Insira um valor maior que zero!")
     }
     
-    if(!Controller.validatorOrigemDestino(origem, destino) && Controller.validatorMoeda(origem) && Controller.validatorMoeda(destino) && Controller.validatorValor(valor)){
+    if(!Controller.validatorOrigemDestino(origem, destino) && !Controller.validatorMoeda(origem) && !Controller.validatorMoeda(destino) && Controller.validatorValor(valor)){
 
         const conversion = new Conversion(origem ,destino, parseFloat(valor))
         const rate = await conversion.convert_rate()
@@ -44,6 +44,7 @@ do{
         }
     }else{
         console.log(error)
+        error.splice(0, error.length)
     }
     
 }while(true)
