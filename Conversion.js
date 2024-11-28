@@ -55,8 +55,4 @@ export class Conversion{
 
 }
 
-const test = new Conversion('BRL','USD',200)
-console.log(test.URL)
-
-
 
