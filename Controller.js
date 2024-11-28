@@ -1,6 +1,6 @@
 
 export function validatorMoeda(moeda){
-    if(moeda.length === 3){
+    if(moeda !== null && moeda.length === 3){
         return true
     }
     return false;
