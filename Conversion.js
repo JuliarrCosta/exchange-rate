@@ -30,7 +30,12 @@ export class Conversion{
         try{
             const response = await axios.get(this.URL)
             return response.data.conversion_rate
+
         }catch(error){
+            const errorType = error.response?.data?.["error-type"]
+            if(errorType === "unsupported-code"){
+                return 1;
+            }
             return false;
         }
     }
@@ -38,14 +43,20 @@ export class Conversion{
         try{
             const response = await axios.get(this.URL)
             return response.data.conversion_result
+
         }catch(error){
+            const errorType = error.response?.data?.["error-type"]         
+            if(errorType === "unsupported-code"){
+                return 1;
+            }
             return false;
         }
     }
 
 }
 
-
+const test = new Conversion('BRL','USD',200)
+console.log(test.URL)
 
 
 

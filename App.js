@@ -38,7 +38,10 @@ do{
             error.push("Erro de conexão! Tente novamente mais tarde.")
             console.log(error)
             break;
-        
+            
+        }else if(rate === 1 || result === 1){
+            error.push("Moeda digitada incorretamente ou não existe!")
+            console.log(error)
         }else{
             console.log(`${origem} ${valor} => ${destino} ${Controller.formatValor(result)} `)
             console.log(`Taxa: ${Controller.formatCasasDecimais(rate)}`)
