@@ -36,6 +36,7 @@ do{
 
         if( rate === false || result === false){
             error.push("Erro de conexão! Tente novamente mais tarde.")
+            console.log(error)
             break;
         
         }else{

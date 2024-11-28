@@ -39,7 +39,7 @@ export class Conversion{
             const response = await axios.get(this.URL)
             return response.data.conversion_result
         }catch(error){
-            return false
+            return false;
         }
     }
 
